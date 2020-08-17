@@ -3,7 +3,9 @@
     <div class="header">
       <div class="header-main">
         <div class="header-main-l">
-          <img src="../../assets/images/logo.png" alt="" class="header-main-l-logo">
+          <router-link to="/index">
+            <img src="../../assets/images/logo.png" alt="" class="header-main-l-logo">
+          </router-link>
         </div>
         <div class="header-main-c">
           <!-- <ul class="header-main-c-ul">
@@ -13,14 +15,14 @@
           </ul> -->
           <ul class="header-main-c-ul">
             <li v-for="(item, index) in list" :key="index" class="header-main-c-li">
-              <router-link :to="item.path">
+              <router-link class="header-main-c-li-router" :to="item.path">
                 {{item.title}}
               </router-link>
             </li>
           </ul>
         </div>
         <div class="header-main-r">
-          <el-button type="primary" plain>登录</el-button>
+          <el-button type="primary" round>登录</el-button>
         </div>
       </div>
     </div>
@@ -51,9 +53,18 @@ export default {
 </script>
 
 <style scoped>
-.header{
+.el-button--primary{
+  background-color: rgb(117, 221, 200);
+  border-color: rgb(117, 221, 200);
+}
+.el-button--primary:hover{
+  color: rgb(117, 221, 200);
   background-color: #fff;
-  border-bottom: solid 1px #eee;
+  border-color: #fff;
+}
+.header{
+  /* background-color: #fff; */
+  /* border-bottom: solid 1px #666666; */
   width: 100%;
   height: 80px;
   margin-bottom: 10px;
@@ -68,7 +79,7 @@ export default {
   font-size: 20px;
 }
 .header-main-l-logo{
-  width: 100%;
+  width: 60px;
   height: 60px;
 }
 .header-main-l, .header-main-r {
@@ -88,6 +99,13 @@ ul,li{
 .header-main-c-li{
   flex: 1;
   list-style: none;
-  background-color: #fff;
+  /* background-color: #fff; */
+}
+.header-main-c-li-router{
+  color: rgb(117, 221, 200);
+  text-decoration: none;
+}
+.header-main-c-li-router:hover{
+  color: #eee;
 }
 </style>

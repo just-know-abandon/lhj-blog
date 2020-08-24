@@ -64,8 +64,7 @@ export default {
   overflow-x: hidden;
 }
 .big {
-  background: radial-gradient(200% 100% at bottom center, #f7f7b6, #e96f92, #75517d, #1b2947);
-  background: radial-gradient(220% 105% at top center, #1b2947 10%, #75517d 40%, #e96f92 65%, #f7f7b6);
+  background: linear-gradient(to bottom, #000000 0%,#363535 100%);
   background-attachment: fixed;
   overflow: hidden;
 }

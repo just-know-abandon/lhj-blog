@@ -58,6 +58,7 @@ ul, li{
   padding: 0;
 }
 .footer-ul{
+  color: #eee;
   list-style: none;
   height: 60px;
   width: 50vw;

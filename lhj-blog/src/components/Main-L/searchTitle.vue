@@ -60,9 +60,11 @@ export default {
       this.getnoteList({}, newPage)
     },
     getnoteList (newSize, newPage) {
-      this.$axios.get('http://localhost:8000/blog/list')
+      this.$axios.get('http://localhost:8000/blog/list?keyword=' + this.$route.query.searchtitle)
         .then(res => {
-          // console.log(res.data.data)
+          console.log('123')
+          console.log(this.$route.query.searchtitle)
+          console.log(res.data.data)
           // this.noteList = res.data.data
           // console.log(this.queryInfo.pagesize)
           if (newSize) {
@@ -82,28 +84,15 @@ export default {
     }
   },
   mounted () {
-    // async function getnoteList () {
-    //   const { data: res } = await this.$axios.get('http://localhost:3000/note/getNoteList')
-    //     .then(res => {
-    //       console.log(res.data)
-    //       this.noteList = res.data
-    //       this.total = res.data.length
-    //       console.log(res)
-    //     })
-    //     .catch(err => {
-    //       console.log(err)
-    //     })
-    //   console.log(res)
-    // }
-    // this.$axios.get('http://localhost:3000/blog/list')
-    //   .then(res => {
-    //     console.log(res.data)
-    //     this.noteList = res.data
-    //     this.total = res.data.length
-    //   })
-    //   .catch(err => {
-    //     console.log(err)
-    //   })
+  },
+  watch: {
+    $route (to, from) {
+      if (to !== from) {
+        // this.id = this.$route.query.id
+        // console.log(this.id)
+        this.getnoteList(this.queryInfo.pagesize, this.queryInfo.pagenum)
+      }
+    }
   }
 }
 </script>
@@ -112,6 +101,7 @@ export default {
 .big{
   width: 90%;
   background-color: rgba(85, 78, 78, 0.5);
+  min-height: 720px;
 }
 ul, li, p{
   margin: 0;

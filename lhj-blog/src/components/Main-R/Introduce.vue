@@ -2,7 +2,7 @@
   <div>
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span>个人介绍</span>
+        <span>{{msg}}</span>
       </div>
       <div class="introduce-box" v-for="(item) in introduce" :key="item.id">
         <p class="introduce-p">{{item.introduce}}</p>
@@ -21,6 +21,7 @@ export default {
       max: '5'
     }
     return {
+      msg: '个人介绍',
       chartData: {
         columns: ['技术', '个人技术栈'],
         rows: [

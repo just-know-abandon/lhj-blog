@@ -54,11 +54,11 @@ export default {
 
 <style scoped>
 .el-button--primary{
-  background-color: rgb(117, 221, 200);
-  border-color: rgb(117, 221, 200);
+  background-color: rgb(93, 170, 155);
+  border-color: rgb(93, 170, 155);
 }
 .el-button--primary:hover{
-  color: rgb(117, 221, 200);
+  color: rgb(93, 170, 155);
   background-color: #fff;
   border-color: #fff;
 }
@@ -102,7 +102,7 @@ ul,li{
   /* background-color: #fff; */
 }
 .header-main-c-li-router{
-  color: rgb(117, 221, 200);
+  color: rgb(93, 170, 155);
   text-decoration: none;
 }
 .header-main-c-li-router:hover{

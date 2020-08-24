@@ -60,8 +60,10 @@ export default {
       this.getnoteList({}, newPage)
     },
     getnoteList (newSize, newPage) {
-      this.$axios.get('http://localhost:8000/blog/list')
+      this.$axios.get('http://localhost:8000/blog/list?keyword=' + this.$route.query.keyword)
         .then(res => {
+          console.log('123')
+          console.log(this.$route.query.keyword)
           // console.log(res.data.data)
           // this.noteList = res.data.data
           // console.log(this.queryInfo.pagesize)
@@ -104,6 +106,15 @@ export default {
     //   .catch(err => {
     //     console.log(err)
     //   })
+  },
+  watch: {
+    $route (to, from) {
+      if (to !== from) {
+        // this.id = this.$route.query.id
+        // console.log(this.id)
+        this.getnoteList(this.queryInfo.pagesize, this.queryInfo.pagenum)
+      }
+    }
   }
 }
 </script>

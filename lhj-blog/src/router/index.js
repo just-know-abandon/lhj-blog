@@ -30,6 +30,34 @@ const routes = [
         components: {
           main: () => import('../components/Main-L/About.vue')
         }
+      },
+      {
+        path: '/detail',
+        name: 'Detail',
+        components: {
+          main: () => import('../components/Main-L/detail.vue')
+        }
+      },
+      {
+        path: '/fenleilist',
+        name: 'FenleiList',
+        components: {
+          main: () => import('../components/Main-L/fenleiList.vue')
+        }
+      },
+      {
+        path: '/searchauthor',
+        name: 'SearchAuthor',
+        components: {
+          main: () => import('../components/Main-L/searchAuthor.vue')
+        }
+      },
+      {
+        path: '/searchtitle',
+        name: 'SearchTitle',
+        components: {
+          main: () => import('../components/Main-L/searchTitle.vue')
+        }
       }
     ]
   }
